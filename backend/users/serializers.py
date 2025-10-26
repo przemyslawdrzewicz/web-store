@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = CustomUser
-        fields = ['id', 'username', 'password', 'email', 'is_active']
+        fields = ['id', 'username', 'password', 'email', 'is_active', 'is_superuser']
         
     def validate_email(self, value):
         if CustomUser.objects.filter(email=value).exists():
